@@ -1,0 +1,69 @@
+name: 'Staging: Build and Deploy'
+
+on:
+  push:
+    branches:
+      - 'feature/**'
+      - main
+
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Azure Login
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    - name: Setup Terraform
+      uses: hashicorp/setup-terraform@v1
+      with:
+        terraform_version: 1.5.0
+
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Terraform Configuration
+      run: |
+        cd ./infrastructure/terraform
+        echo "terraform {
+          backend \"azurerm\" {
+            storage_account_name = \"terraformstatekalvinsub\"
+            container_name       = \"staging\"
+            key                  = \"portfolio/webapp.tfstate\"
+            access_key           = \"${{ secrets.TERRAFORM_STATE_ACCESS_KEY }}\"
+          }
+        }" > backend.tf
+
+    - name: Terraform Init
+      run: |
+        cd ./infrastructure/terraform
+        terraform init
+
+    - name: Terraform Validate
+      run: |
+        cd ./infrastructure/terraform
+        terraform validate
+
+    - name: Terraform Apply
+      run: |
+        cd ./infrastructure/terraform
+        terraform apply -auto-approve -var-file=staging.tfvars
+
+  build_and_deploy:
+    needs: [terraform]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 18
