@@ -6,7 +6,6 @@ import { ref } from 'vue';
 
 const projects: any = [
         {
-          id: 1,
           company: 'International Capital Markets',
           role: 'Software Engineer',
           description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -14,7 +13,6 @@ const projects: any = [
           website: null,
         },
         {
-          id: 2,
           company: 'NantHealth',
           role: 'Software Engineer',
           description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -22,7 +20,6 @@ const projects: any = [
           date: 'September 2022 - January 2023'
         },
         {
-          id: 2,
           company: 'NantHealth',
           role: 'Graduate Software Engineer',
           description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -30,7 +27,6 @@ const projects: any = [
           date: 'June 2021 - September 2022'
         },
         {
-          id: 2,
           company: 'NantHealth',
           role: 'Associate Software Engineer',
           description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -55,7 +51,7 @@ const projects: any = [
                 <p>
                   {{slotProps.item.description}}
                 </p>
-                <Button v-if=slotProps.item.website label="Visit Website" icon="pi pi-fw pi-external-link" href="slotProps.item.website" target="_blank" class="p-button-primary" />
+                <Button v-if=slotProps.item.website label="Visit Website" icon="pi pi-fw pi-external-link" :href="slotProps.item.website" target="_blank" class="p-button-primary" />
               </template>
           </Card>
       </template>
