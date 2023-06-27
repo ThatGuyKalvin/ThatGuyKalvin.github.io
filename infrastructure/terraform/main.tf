@@ -17,7 +17,11 @@ resource "azurerm_storage_account" "storage_account" {
   account_tier              = "Standard"
   account_replication_type  = "GRS"
   enable_https_traffic_only = true
-  custom_domain             = "${var.domain_name}"
+
+  custom_domain {
+    name = local.app_domain_name
+    use_subdomain = local.use_subdomain
+  }
 
   static_website {
     index_document = "index.html"

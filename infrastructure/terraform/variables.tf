@@ -4,9 +4,10 @@ variable "app_name" {
   default     = "portfolio"
 }
 
-variable "domain_name" {
+variable "root_domain_name" {
   description = "Custom domain for the app"
   type        = string
+  default     = "kalvin.dev"
 }
 
 variable "environment_name" {
@@ -48,4 +49,7 @@ locals {
 
   # Set environment_short_name based on environment_name
   environment_short_name = lookup(local.environment_short_names, var.environment_name, "dev")
+
+  app_domain_name = local.environment_short_name == "prd" ? format("%s.%s", local.environment_short_name, var.root_domain_name) : var.root_domain_name
+  use_subdomain = local.environment_short_name == "prd" ? false : true
 }
