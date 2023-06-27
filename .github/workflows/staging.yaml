@@ -76,17 +76,17 @@ jobs:
           npm ci
 
       - name: Run lint
-        run: 
+        run: |
           cd app
           npm run lint --if-present
 
       - name: Run build
-        run:
+        run: |
           cd app
           npm run build --if-present
         
       - name: Run unit tests
-        run:
+        run: |
           cd app
           npm run test:unit
 
