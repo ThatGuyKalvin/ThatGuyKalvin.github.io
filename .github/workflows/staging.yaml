@@ -49,6 +49,12 @@ jobs:
       run: |
         cd ./infrastructure/terraform
         terraform apply -auto-approve -var-file=staging.tfvars
+    
+    - name: Read Terraform Outputs
+        id: read-outputs
+        run: |
+          echo "::set-output name=terraform-outputs::$(terraform output -json)"
+          echo "${{ steps.read-outputs.outputs.terraform-outputs }}"
 
   build_and_deploy:
     needs: [terraform]
@@ -59,11 +65,40 @@ jobs:
         uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
-
+          
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
+      - name: Setup Node
+        uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 16.x
+          cache: "npm"
+          
+      - name: NPM install
+        run: |
+          cd app
+          npm ci
+
+      - name: Run lint
+        run: 
+          cd app
+          npm run lint --if-present
+
+      - name: Run build
+        run:
+          cd app
+          npm run build --if-present
+        
+      - name: Run unit tests
+        run:
+          cd app
+          npm run test:unit
+
+      - name: Upload content
+        uses: Azure/CLI@v1
+        with:
+          azcliversion: latest
+          inlineScript: |
+            cd app
+            az storage blob upload-batch --account-name <storage-account-name> --destination <container-name> --source dist --pattern "*.*"
