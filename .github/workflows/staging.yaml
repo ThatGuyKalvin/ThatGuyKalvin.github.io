@@ -53,7 +53,8 @@ jobs:
     - name: Read Terraform Outputs
       id: read-outputs
       run: |
-        echo "terraform-outputs=$(terraform output -json)" >> $GITHUB_OUTPUT
+        OUTPUTS=$(terraform output -json)
+        echo "terraform-outputs=$OUTPUTS" >> $GITHUB_OUTPUT
 
     - name: Write Terraform Outputs
       run: |
