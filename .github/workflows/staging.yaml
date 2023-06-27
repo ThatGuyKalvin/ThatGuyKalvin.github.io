@@ -51,10 +51,15 @@ jobs:
         terraform apply -auto-approve -var-file=staging.tfvars
     
     - name: Read Terraform Outputs
-        id: read-outputs
-        run: |
-          echo "::set-output name=terraform-outputs::$(terraform output -json)"
-          echo "${{ steps.read-outputs.outputs.terraform-outputs }}"
+      id: read-outputs
+      run: |
+        OUTPUTS=$(terraform output -json)
+        echo "::set-output name=terraform-outputs::$OUTPUTS"
+        echo "$OUTPUTS"
+
+    - name: Write Terraform Outputs
+      run: |
+        echo "${{ steps.read-outputs.outputs }}"
 
   build_and_deploy:
     needs: [terraform]
@@ -101,4 +106,4 @@ jobs:
           azcliversion: latest
           inlineScript: |
             cd app
-            az storage blob upload-batch --account-name <storage-account-name> --destination <container-name> --source dist --pattern "*.*"
+            az storage blob upload-batch --account-name ${{ steps.read-outputs.outputs.terraform-outputs.storage_account_name.value }} --destination <container-name> --source dist --pattern "*.*"
