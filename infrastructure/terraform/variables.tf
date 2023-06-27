@@ -4,6 +4,11 @@ variable "app_name" {
   default     = "portfolio"
 }
 
+variable "app_name" {
+  description = "Custom domain for the app"
+  type        = string
+}
+
 variable "environment_name" {
   description = "Name of the environment"
   type        = string
