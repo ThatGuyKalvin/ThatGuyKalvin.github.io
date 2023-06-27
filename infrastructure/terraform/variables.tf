@@ -4,7 +4,7 @@ variable "app_name" {
   default     = "portfolio"
 }
 
-variable "app_name" {
+variable "domain_name" {
   description = "Custom domain for the app"
   type        = string
 }
