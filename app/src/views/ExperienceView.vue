@@ -15,15 +15,12 @@ import { experienceList } from '../data/experienceData';
             <template #title>
               <span class="role">{{ slotProps.item.role }} / </span>
               <span class="company-info">{{ slotProps.item.company }}, {{ slotProps.item.city }}</span>
+              <a :href="slotProps.item.website" target="_blank" style="margin-left: 0.5rem;">
+                <i class="pi pi-fw pi-external-link" style="color: var(--primary-color);"></i>
+              </a>
             </template>
             <template #subtitle>
-              <a v-if="slotProps.item.id % 2 === 1" :href="slotProps.item.website" target="_blank">
-                <i v-if="slotProps.item.id % 2 === 1" class="pi pi-fw pi-external-link" style="color: var(--primary-color)"></i>
-              </a>
               {{ slotProps.item.date }}
-              <a v-if="slotProps.item.id % 2 === 0" :href="slotProps.item.website" target="_blank">
-                <i v-if="slotProps.item.id % 2 === 0" class="pi pi-fw pi-external-link" style="color: var(--primary-color)"></i>
-              </a>
             </template>
             <template #content>
               <p>
@@ -42,6 +39,7 @@ import { experienceList } from '../data/experienceData';
 .role {
   color: var(--primary-color); /* Replace with your primary color */
 }
+
 
 .company-info {
   color: var(--secondary-color); /* Replace with your secondary color */
