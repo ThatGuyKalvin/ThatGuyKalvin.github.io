@@ -9,6 +9,10 @@ const router = createRouter({
       name: 'experience',
       component: ExperienceView
     },
+    {
+      path: '/:catchAll(.*)',
+      redirect: { name: 'experience' }
+    }
   ]
 })
 
