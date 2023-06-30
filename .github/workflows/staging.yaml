@@ -96,5 +96,5 @@ jobs:
           azcliversion: latest
           inlineScript: |
             cd app
-            az storage blob upload-batch --account-name portfoliostgsa --destination '$web' --source dist --pattern *.* --overwrite
+            az storage blob upload-batch --account-name portfoliostgsa --destination '$web' --source 'dist' --overwrite
             
