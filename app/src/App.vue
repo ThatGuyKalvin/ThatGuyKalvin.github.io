@@ -1,14 +1,19 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
 import HeaderBar from './components/HeaderBar.vue';
+import ProfileView from './views/ProfileView.vue';
 </script>
 
 <template>
   <header>
       <HeaderBar />
   </header>
-
-  <RouterView />
+  <div id="left" class="left">
+    <ProfileView />
+  </div>
+  <div id="right" class="right">
+    <RouterView />
+  </div>
 </template>
 
 

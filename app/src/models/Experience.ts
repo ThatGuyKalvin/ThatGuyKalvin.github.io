@@ -4,5 +4,6 @@ export interface Experience {
     role: string;
     description: string;
     date: string;
+    city: string;
     website?: string;
   }
