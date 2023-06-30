@@ -20,7 +20,7 @@ resource "azurerm_storage_account" "storage_account" {
 
   custom_domain {
     name = local.app_domain_name
-    use_subdomain = local.use_subdomain
+    use_subdomain = false
   }
 
   static_website {

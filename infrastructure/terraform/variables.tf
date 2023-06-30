@@ -51,5 +51,4 @@ locals {
   environment_short_name = lookup(local.environment_short_names, var.environment_name, "dev")
 
   app_domain_name = local.environment_short_name == "prd" ? var.root_domain_name : format("%s-%s.%s", var.app_name, local.environment_short_name, var.root_domain_name)
-  use_subdomain = local.environment_short_name == "prd" ? false : true
 }
