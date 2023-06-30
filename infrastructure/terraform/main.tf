@@ -16,7 +16,7 @@ resource "azurerm_storage_account" "storage_account" {
 
   account_tier              = "Standard"
   account_replication_type  = "LRS"
-  enable_https_traffic_only = true
+  enable_https_traffic_only = false
 
   custom_domain {
     name = local.app_domain_name
