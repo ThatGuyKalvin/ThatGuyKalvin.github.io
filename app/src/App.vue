@@ -9,10 +9,10 @@ import ProfileView from './views/ProfileView.vue';
     <HeaderBar />
   </header>
   <v-row>
-    <v-col cols="12" xs="12" md="4">
+    <v-col cols="12" sm="12" md="4">
         <ProfileView />
     </v-col>
-    <v-col cols="12" xs="12" md="8">
+    <v-col cols="12" sm="12" md="8">
         <RouterView />
     </v-col>
   </v-row>
