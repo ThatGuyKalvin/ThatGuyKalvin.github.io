@@ -5,5 +5,6 @@ export interface Experience {
     description: string;
     date: string;
     city: string;
+    projects?: string[];
     website?: string;
   }

@@ -5,26 +5,22 @@ import ProfileView from './views/ProfileView.vue';
 </script>
 
 <template>
-  <header>
-      <HeaderBar />
+  <header class="header">
+    <HeaderBar />
   </header>
-  <div id="left" class="left">
-    <ProfileView />
-  </div>
-  <div id="right" class="right">
-    <RouterView />
-  </div>
+  <v-row>
+    <v-col cols="12" xs="12" md="4">
+        <ProfileView />
+    </v-col>
+    <v-col cols="12" xs="12" md="8">
+        <RouterView />
+    </v-col>
+  </v-row>
 </template>
 
 
-
 <style scoped>
-@media (min-width: 1024px) {
-
-  header {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+.header {
+  padding-bottom: 4px;
 }
 </style>

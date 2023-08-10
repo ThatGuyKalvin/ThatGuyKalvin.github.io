@@ -9,7 +9,7 @@ import { experienceList } from '../data/experienceData';
 <template>
   <main>
     <ScrollPanel style="height: 83vh;">
-    <Timeline :value="experienceList" align="left" class="customized-timeline">
+    <Timeline :value="experienceList" class="customized-timeline">
       <template #content="slotProps">
           <Card>
             <template #title>
@@ -26,6 +26,14 @@ import { experienceList } from '../data/experienceData';
               <p>
                 {{slotProps.item.description}}
               </p>
+
+              <div v-if="slotProps.item.projects && slotProps.item.projects.length > 0">
+                <br>
+                  Some projects I worked on include:
+                  <ul class="projects-list">
+                    <li v-for="project in slotProps.item.projects" :key="project">{{ project }}</li>
+                  </ul>
+              </div>
             </template>
           </Card>
       </template>
@@ -40,6 +48,14 @@ import { experienceList } from '../data/experienceData';
   color: var(--primary-color); /* Replace with your primary color */
 }
 
+.projects-list {
+  list-style-type:square;
+  padding-left: 20px;
+}
+
+.projects-list li::marker {
+  color: var(--primary-color); /* Set the desired color for the bullet points */
+}
 
 .company-info {
   color: var(--secondary-color); /* Replace with your secondary color */
@@ -47,6 +63,10 @@ import { experienceList } from '../data/experienceData';
 
 :deep(.p-timeline.p-timeline-vertical .p-timeline-event-content) {
     padding: 1rem 1rem;
+}
+
+:deep(.p-timeline.p-timeline-vertical .p-timeline-event-opposite) {
+    display: none;
 }
 
 </style>
