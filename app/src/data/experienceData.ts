@@ -7,6 +7,7 @@ export const experienceList: Experience[] = [
     role: 'Software Engineer',
     description: 'I am currently working as a Software Engineer implementing new features for client and internal facing web applications, as well as integrating external solutions into a finance platform.',
     projects: [
+      "Integrating Australian Securities Exchange (ASX)",
       "SwiftID - API (.NET 6) used to integrate a Know Your Customer (KYC) solution with our existing platform",
       "Fiat payment systems for deposit and withdrawal (T-SQL, .NET Framework and JavaScript)",
       "Cryptocurrency payment systems for deposit and withdrawal (T-SQL, .NET Framework and JavaScript)",
