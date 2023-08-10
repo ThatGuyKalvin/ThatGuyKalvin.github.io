@@ -15,9 +15,7 @@ import { experienceList } from '../data/experienceData';
             <template #title>
               <span class="role">{{ slotProps.item.role }} / </span>
               <span class="company-info">{{ slotProps.item.company }}, {{ slotProps.item.city }}</span>
-              <a :href="slotProps.item.website" target="_blank" style="margin-left: 0.5rem;">
-                <i class="pi pi-fw pi-external-link" style="color: var(--primary-color);"></i>
-              </a>
+              <v-btn class="btn" :href="slotProps.item.website" target="_blank" size="x-small" icon="pi pi-external-link" variant="flat"></v-btn>
             </template>
             <template #subtitle>
               {{ slotProps.item.date }}
@@ -44,6 +42,10 @@ import { experienceList } from '../data/experienceData';
 </template>
 
 <style scoped>
+.btn {
+  margin-left: 0.5rem;
+  color: var(--primary-color)
+}
 .role {
   color: var(--primary-color); /* Replace with your primary color */
 }
