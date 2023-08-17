@@ -4,6 +4,7 @@ import type { MenuItem } from 'primevue/menuitem';
 
 const items: MenuItem[] = [
     { label: 'Home', icon: 'pi pi-fw pi-home', to: '/' },
+    { label: 'Resume', icon: 'pi pi-fw pi-file-pdf', to: '/Resume' },
   ]
 </script>
 
