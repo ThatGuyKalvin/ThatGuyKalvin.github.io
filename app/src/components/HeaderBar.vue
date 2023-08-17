@@ -2,10 +2,29 @@
 import TabMenu from 'primevue/tabmenu';
 import type { MenuItem } from 'primevue/menuitem';
 
-const items: MenuItem[] = [
+let items: MenuItem[] = [
     { label: 'Home', icon: 'pi pi-fw pi-home', to: '/' },
-    { label: 'Resume', icon: 'pi pi-fw pi-file-pdf', to: '/Resume' },
+    //{ label: 'Resume', icon: 'pi pi-fw pi-file-pdf', to: '/Resume' },
+    //{ label: 'Resume', icon: 'pi pi-fw pi-cloud-download', url: 'pdfs/Kalvin_Johnston_Resume.pdf', target: "true"},
   ]
+
+let deviceType: string
+const userAgent = navigator.userAgent.toLowerCase();
+if (/(android|webos|iphone|ipad|ipod|blackberry|windows phone)/.test(userAgent)) {
+    deviceType = 'mobile'
+} else if (/mac|win|linux/i.test(userAgent)) {
+    deviceType = 'desktop'
+} else if (/tablet|ipad/i.test(userAgent)) {
+    deviceType = 'tablet'
+} else {
+    deviceType = 'unknown'
+}
+
+if(deviceType === 'mobile' || deviceType === 'tablet') {
+  items.push({ label: 'Resume', icon: 'pi pi-fw pi-cloud-download', url: 'pdfs/Kalvin_Johnston_Resume.pdf', target: "true"})
+}
+else items.push({ label: 'Resume', icon: 'pi pi-fw pi-file-pdf', to: '/Resume' })
+                
 </script>
 
 <template>
