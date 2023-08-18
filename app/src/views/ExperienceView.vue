@@ -60,7 +60,6 @@ import { experienceList } from '../data/experienceData';
 }
 
 .projects-list {
-  list-style-type:square;
   padding-left: 20px;
 }
 
