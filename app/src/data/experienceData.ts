@@ -17,7 +17,14 @@ export const experienceList: Experience[] = [
     ],
     date: 'February 2023 - Present',
     website: 'https://icmarkets.com.au',
-    city: 'Sydney'
+    city: 'Sydney',
+    technologies: [
+      ".NET",
+      "JavaScript",
+      "T-SQL",
+      "AWS",
+      "SQS"
+    ]
   },
   {
     id: 2,
@@ -37,7 +44,19 @@ export const experienceList: Experience[] = [
     ],
     website: 'https://nanthealth.com',
     date: 'September 2022 - January 2023',
-    city: 'Belfast'
+    city: 'Belfast',
+    technologies: [
+      "Vue",
+      "Vite",
+      ".NET",
+      "T-SQL",
+      "TypeScript",
+      "JavaScript",
+      "Selenium",
+      "Azure",
+      "IS4",
+      "Event Hub"
+    ]
   },
   {
     id: 3,
@@ -57,7 +76,19 @@ export const experienceList: Experience[] = [
     ],
     website: 'https://nanthealth.com',
     date: 'June 2021 - September 2022',
-    city: 'Belfast'
+    city: 'Belfast',
+    technologies: [
+      "Vue",
+      "Vite",
+      ".NET",
+      "T-SQL",
+      "TypeScript",
+      "JavaScript",
+      "Selenium",
+      "Azure",
+      "IS4",
+      "EventHub"
+    ]
   },
   {
     id: 4,
@@ -74,7 +105,17 @@ export const experienceList: Experience[] = [
     ],
     website: 'https://nanthealth.com',
     date: 'June 2019 - July 2020',
-    city: 'Belfast'
+    city: 'Belfast',
+    technologies: [
+      "Vue",
+      ".NET",
+      "T-SQL",
+      "JavaScript",
+      "Selenium",
+      "Kubernetes",
+      "Helm",
+      "ActiveMQ"
+    ]
   },
   {
     id: 5,
@@ -83,9 +124,9 @@ export const experienceList: Experience[] = [
     description: 'This was a voluntary role working for a large Grand Theft Auto: San Andreas Multiplayer roleplay gaming community.',
     projects: [
       "Rewriting player data to use MySQL instead of .ini files",
+      "Anticheat",
       "Housing for players to buy/sell with in game currency",
       "Cars for players to buy/sell with in game currency",
-      "Anticheat for armour, weapon and car hacking",
       "Factions with special abilities, such as police",
       "Side missions",
       "Team deathmatch and capture the flag events",
@@ -93,6 +134,10 @@ export const experienceList: Experience[] = [
     ],
     website: 'https://gta-sarp.com',
     date: 'June 2014 - June 2017',
-    city: 'Belfast'
+    city: 'Belfast',
+    technologies: [
+      "PAWN",
+      "MySQL"
+    ]
   },
 ];

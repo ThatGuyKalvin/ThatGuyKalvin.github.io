@@ -32,6 +32,9 @@ import { experienceList } from '../data/experienceData';
                     <li v-for="project in slotProps.item.projects" :key="project">{{ project }}</li>
                   </ul>
               </div>
+              <div class="technologies">
+                <v-badge v-for="technology in slotProps.item.technologies" :key="technology" color="info" :content="technology" inline></v-badge>
+              </div>
             </template>
           </Card>
       </template>
@@ -42,6 +45,12 @@ import { experienceList } from '../data/experienceData';
 </template>
 
 <style scoped>
+:deep(.bg-info) {
+    --v-theme-overlay-multiplier: var(--v-theme-info-overlay-multiplier);
+    background-color: var(--primary-color) !important;
+    color: rgb(var(--v-theme-on-info)) !important;
+}
+
 .btn {
   margin-left: 0.5rem;
   color: var(--primary-color)
@@ -69,6 +78,10 @@ import { experienceList } from '../data/experienceData';
 
 :deep(.p-timeline.p-timeline-vertical .p-timeline-event-opposite) {
     display: none;
+}
+
+:deep(.p-card .p-card-content) {
+  padding: 0 0;
 }
 
 </style>

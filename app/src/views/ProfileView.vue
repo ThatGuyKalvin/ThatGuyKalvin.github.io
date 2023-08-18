@@ -62,7 +62,7 @@ import { aboutMe } from '../data/aboutMeData';
   box-shadow: none;
 }
 
-.card-content {
+:deep(.p-card .p-card-content) {
   padding: 0 0;
 }
 
