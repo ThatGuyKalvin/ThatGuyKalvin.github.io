@@ -51,7 +51,6 @@ export const experienceList: Experience[] = [
       ".NET",
       "T-SQL",
       "TypeScript",
-      "JavaScript",
       "Selenium",
       "Azure",
       "IS4",
@@ -83,18 +82,17 @@ export const experienceList: Experience[] = [
       ".NET",
       "T-SQL",
       "TypeScript",
-      "JavaScript",
       "Selenium",
       "Azure",
       "IS4",
-      "EventHub"
+      "Event Hub"
     ]
   },
   {
     id: 4,
     company: 'NantHealth',
     role: 'Associate Software Engineer',
-    description: 'As an Associate Stack Software Engineer my role was to implement new features for an existing healthcare platform.',
+    description: 'As an Associate Full Stack Software Engineer my role was to implement new features for an existing healthcare platform.',
     projects: [
       "Document Exchange - API (.NET Framework 4.7) and frontend (Razor and Vue 2) used by clinical and insurance staff to view, create, edit and transfer documents",
       "Alerting - API (.NET Core 3.1) and frontend (Razor) used by clinical staff to set up scheduled e-mail alerts for documents with pending actions",
