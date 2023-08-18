@@ -3,9 +3,7 @@ import TabMenu from 'primevue/tabmenu';
 import type { MenuItem } from 'primevue/menuitem';
 
 let items: MenuItem[] = [
-    { label: 'Home', icon: 'pi pi-fw pi-home', to: '/' },
-    //{ label: 'Resume', icon: 'pi pi-fw pi-file-pdf', to: '/Resume' },
-    //{ label: 'Resume', icon: 'pi pi-fw pi-cloud-download', url: 'pdfs/Kalvin_Johnston_Resume.pdf', target: "true"},
+    { label: 'About', icon: 'pi pi-fw pi-home', to: '/' },
   ]
 
 let deviceType: string
@@ -21,9 +19,9 @@ if (/(android|webos|iphone|ipad|ipod|blackberry|windows phone)/.test(userAgent))
 }
 
 if(deviceType === 'mobile' || deviceType === 'tablet') {
-  items.push({ label: 'Resume', icon: 'pi pi-fw pi-cloud-download', url: 'pdfs/Kalvin_Johnston_Resume.pdf', target: "true"})
+  items.push({ label: 'Résumé', icon: 'pi pi-fw pi-cloud-download', url: 'pdfs/Kalvin_Johnston_Resume.pdf', target: "true"})
 }
-else items.push({ label: 'Resume', icon: 'pi pi-fw pi-file-pdf', to: '/Resume' })
+else items.push({ label: 'Résumé', icon: 'pi pi-fw pi-file-pdf', to: '/Resume' })
                 
 </script>
 

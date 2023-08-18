@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import Image from 'primevue/image'
+import Card from 'primevue/card'
+import { aboutMe } from '../data/aboutMeData';
 </script>
 
 <template>
@@ -30,10 +32,62 @@ import Image from 'primevue/image'
         </v-col>
       </v-row>
     </div>
+    <div class="info">
+      <Card class="card">
+        <template #title>
+          <span class="name">{{ aboutMe.name }}</span>
+          </template>
+        <template class="subtitle" #subtitle>
+          {{ aboutMe.title }}
+        </template>
+        <template class="card-content" #content>
+          <p class="description" v-for="(item, index) in aboutMe.descriptionParagraphs" :key="index">
+          {{ item }}
+          <br />
+          </p>
+        </template>
+      </Card>
+    </div>
   </div>
 </template>
 
 <style scoped>
+.name {
+  font-weight: 500;
+  font-size: 1.75rem;
+  line-height: 1.75rem;
+}
+
+.card {
+  box-shadow: none;
+}
+
+.card-content {
+  padding: 0 0;
+}
+
+.description {
+  margin-bottom: 10px; /* Adjust the value to control the spacing */
+}
+
+.description:first-child {
+  margin-top: 0; /* Remove top margin for the first paragraph */
+}
+
+.description:last-child {
+  margin-bottom: 0; /* Remove bottom margin for the last paragraph */
+}
+
+.description {
+  line-height: 1.75rem;
+}
+
+.job-title {
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
 .profile {
   padding-top: 12px;
 }
