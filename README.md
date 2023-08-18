@@ -1,9 +1,9 @@
 <p align="center">
   <a href="https://github.com/ThatGuyKalvin/thatguykalvin.github.io/actions/workflows/production.yaml">
-    <img alt="Staging Status" src="https://github.com/volta-cli/volta/workflows/production.yaml/badge.svg" />
+    <img alt="Staging Status" src="https://github.com/ThatGuyKalvin/thatguykalvin.github.io/actions/workflows/production.yaml/badge.svg" />
   </a>
   <a href="https://github.com/ThatGuyKalvin/thatguykalvin.github.io/actions/workflows/staging.yaml">
-    <img alt="Staging Status" src="https://github.com/volta-cli/volta/workflows/staging.yaml/badge.svg" />
+    <img alt="Staging Status" src="https://github.com/ThatGuyKalvin/thatguykalvin.github.io/actions/workflows/staging.yaml/badge.svg" />
   </a>
 </p>
 
