@@ -37,10 +37,10 @@ import { aboutMe } from '../data/aboutMeData';
         <template #title>
           <span class="name">{{ aboutMe.name }}</span>
           </template>
-        <template class="subtitle" #subtitle>
+        <template #subtitle>
           {{ aboutMe.title }}
         </template>
-        <template class="card-content" #content>
+        <template #content>
           <p class="description" v-for="(item, index) in aboutMe.descriptionParagraphs" :key="index">
           {{ item }}
           <br />
