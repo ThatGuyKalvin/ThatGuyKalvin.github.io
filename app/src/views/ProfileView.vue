@@ -54,6 +54,12 @@ import { skillList } from '../data/experienceData';
   line-height: 1.75rem;
 }
 
+:deep(.bg-info) {
+    --v-theme-overlay-multiplier: var(--v-theme-info-overlay-multiplier);
+    background-color: var(--primary-color) !important;
+    color: rgb(var(--v-theme-on-info)) !important;
+}
+
 .card {
   box-shadow: none;
 }
