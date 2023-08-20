@@ -10,7 +10,9 @@ export const skillList: string[] = [
   "NUnit",
   "Terraform",
   "Azure",
-  "ActiveMQ"
+  "ActiveMQ",
+  "HTML",
+  "CSS"
 ]
 
 export const experienceList: Experience[] = [
