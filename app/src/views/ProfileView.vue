@@ -2,6 +2,7 @@
 import Image from 'primevue/image'
 import Card from 'primevue/card'
 import { aboutMe } from '../data/aboutMeData';
+import { skillList } from '../data/experienceData';
 </script>
 
 <template>
@@ -37,6 +38,9 @@ import { aboutMe } from '../data/aboutMeData';
           {{ item }}
           <br />
           </p>
+          <div class="technologies">
+            <v-badge v-for="skill in skillList" :key="skill" color="info" :content="skill" inline></v-badge>
+          </div>
         </template>
       </Card>
     </div>

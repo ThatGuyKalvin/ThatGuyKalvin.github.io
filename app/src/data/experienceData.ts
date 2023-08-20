@@ -1,5 +1,20 @@
 import type { Experience } from '../models/Experience';
 
+export const skillList: string[] = [
+  ".NET",
+  "Vue",
+  "Vite",
+  "T-SQL",
+  "TypeScript",
+  "Selenium",
+  "NUnit",
+  "Terraform",
+  "Azure",
+  "ActiveMQ",
+  "HTML",
+  "CSS"
+]
+
 export const experienceList: Experience[] = [
   {
     id: 1,
@@ -22,6 +37,8 @@ export const experienceList: Experience[] = [
       ".NET",
       "JavaScript",
       "T-SQL",
+      "NUnit",
+      "Entity Framework",
       "AWS",
       "SQS"
     ]
@@ -52,6 +69,8 @@ export const experienceList: Experience[] = [
       "T-SQL",
       "TypeScript",
       "Selenium",
+      "NUnit",
+      "Terraform",
       "Azure",
       "IS4",
       "Event Hub"
@@ -83,6 +102,8 @@ export const experienceList: Experience[] = [
       "T-SQL",
       "TypeScript",
       "Selenium",
+      "NUnit",
+      "Terraform",
       "Azure",
       "IS4",
       "Event Hub"
@@ -110,6 +131,7 @@ export const experienceList: Experience[] = [
       "T-SQL",
       "JavaScript",
       "Selenium",
+      "NUnit",
       "Kubernetes",
       "Helm",
       "ActiveMQ"
